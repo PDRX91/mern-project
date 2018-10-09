@@ -3,8 +3,12 @@ import axios from 'axios';
 
 class GetStuff extends Component {
     componentDidMount(){
-        axios.get('http://localhost:42069/api/get-stuff').then(response => {
+        axios.get('/api/get-stuff').then(response => {
             console.log(`Response from server:`, response)
+        })
+
+        axios.post('/api/get-user').then(resp =>{
+            console.log('Resonse from get user: ', resp);
         })
     }
     render(){
